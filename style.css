@@ -1,72 +1,158 @@
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   color: #3E2C23;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #F5E6D3;
+  z-index: -1;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 15px 10%;
-  background: #EAD7C3;
+  background: rgba(255,255,255,0.7);
   position: fixed;
   width: 100%;
-  top: 0;
-}
-
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: #3E2C23;
 }
 
 .section {
-  height: 100vh;
-  padding: 100px 10%;
+  padding: 120px 10%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-/* Different Colors */
-.home { background: #F5E6D3; }
-.education { background: #DDE6ED; }
-.projects { background: #EAD7C3; }
-.skills { background: #F0DBD0; }
-.contact { background: #E8D5C4; }
+.profile-img {
+  width: 220px;
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+}
 
-button {
-  padding: 10px 20px;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Timeline */
+.timeline {
+  border-left: 3px solid #6F4E37;
+  margin: 50px auto;
+  padding-left: 20px;
+  max-width: 600px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+}
+
+/* 3D Project Cards */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 180px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #EAD7C3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
   background: #6F4E37;
   color: white;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.1);
 }
 
 .social-icons a {
   font-size: 24px;
   margin: 10px;
   color: #6F4E37;
-  transition: 0.3s;
+}
+#themeToggle {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  background: #6F4E37;
+  color: white;
+  border-radius: 5px;
 }
 
-.social-icons a:hover {
-  color: black;
-  transform: translateY(-5px);
+/* Dark Mode */
+.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+.dark-mode nav {
+  background: rgba(0,0,0,0.8);
+}
+
+.dark-mode .card-front {
+  background: #333;
+  color: white;
+}
+
+.dark-mode .card-back {
+  background: #222;
+}
+.chatbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #6F4E37;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.chat-body {
+  height: 150px;
+  overflow-y: auto;
+  padding: 10px;
+  font-size: 14px;
+}
+
+#chatInput {
+  width: 100%;
+  border: none;
+  padding: 8px;
 }

@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>KAMAL KUMAR | Portfolio</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAMAL KUMAR | Portfolio</title>
+
 <link rel="stylesheet" href="style.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
 </head>
+<div class="chatbot">
+  <div class="chat-header">AI Assistant</div>
+  <div class="chat-body" id="chatBody"></div>
+  <input type="text" id="chatInput"
+  placeholder="Ask something..." />
+</div>
 <body>
+
+<!-- Particle Background -->
+<div id="particles-js"></div>
 
 <header>
 <nav>
@@ -18,7 +33,6 @@
 <li><a href="#home">Home</a></li>
 <li><a href="#education">Education</a></li>
 <li><a href="#projects">Projects</a></li>
-<li><a href="#skills">Skills</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -26,50 +40,93 @@
 
 <!-- HOME -->
 <section id="home" class="section home">
+<div class="hero-content" data-aos="fade-up">
+
+<img src="profile.png" class="profile-img">
+
 <h1>KAMAL KUMAR</h1>
 <h3>Cybersecurity Enthusiast & Developer</h3>
-<p>Sant Longowal Institute of Engineering and Technology (SLIET)</p>
-<button onclick="scrollToSection('education')">Explore ↓</button>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="section education">
-<h2>Education</h2>
-<p><strong>BE Computer Science & Engineering</strong></p>
 <p>Sant Longowal Institute of Engineering and Technology</p>
-<p>2025 – 2029</p>
+
+</div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section projects">
-<h2>Projects</h2>
-<p>WiFi Password Finder</p>
-<p>Password Strength Checker</p>
-<p>Jarvis AI</p>
+<!-- EDUCATION TIMELINE -->
+<section id="education" class="section">
+<h2 data-aos="fade-right">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item" data-aos="fade-up">
+<h3>BE CSE (2025–2029)</h3>
+<p>Sant Longowal Institute of Engineering and Technology</p>
+</div>
+
+<div class="timeline-item" data-aos="fade-up">
+<h3>Senior Secondary (RBSE)</h3>
+<p>LBM School Pallu – 88.40%</p>
+</div>
+
+</div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section skills">
-<h2>Skills</h2>
-<p>Cybersecurity | Kali Linux | Python | Ethical Hacking</p>
+<!-- PROJECT CARDS -->
+<section id="projects" class="section">
+<h2 data-aos="fade-left">Projects</h2>
+
+<div class="card-container">
+
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<h3>WiFi Password Finder</h3>
+</div>
+<div class="card-back">
+<p>Linux based tool for analyzing nearby WiFi networks.</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="card-inner">
+<div class="card-front">
+<h3>Jarvis AI</h3>
+</div>
+<div class="card-back">
+<p>Voice-controlled assistant built in Python.</p>
+</div>
+</div>
+</div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section contact">
+<section id="contact" class="section">
 <h2>Contact</h2>
 
 <p>📞 <a href="tel:+918955494801">8955494801</a></p>
-<p>📧 <a href="mailto:kamalbajiya15@gmail.com">kamalbajiya15@gmail.com</a></p>
+<p>📧 <a href="mailto:kamalbajiya15@gmail.com">
+kamalbajiya15@gmail.com</a></p>
 
 <div class="social-icons">
-<a href="http://www.linkedin.com/in/kamal-kumar-65a6b3372" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a href="https://www.instagram.com/kamal_kumar_kansar/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://github.com/KAMAL704" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://www.facebook.com/profile.php?id=100052181223492" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="http://www.linkedin.com/in/kamal-kumar-65a6b3372"
+target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com/KAMAL704"
+target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.instagram.com/kamal_kumar_kansar/"
+target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=100052181223492"
+target="_blank"><i class="fab fa-facebook"></i></a>
 </div>
 
 </section>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
+<button id="themeToggle">🌙</button>
